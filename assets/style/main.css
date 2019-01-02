@@ -9,6 +9,10 @@ body {
     margin: 0px;
 }
 
+h1 {
+    font-size: 3em;
+}
+
 form {
     display: flex;
     align-items: center;
@@ -17,5 +21,4 @@ form {
 
 input {
     border: 1px black solid;
-    border-radius: 5px;
 }
