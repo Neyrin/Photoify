@@ -1,9 +1,21 @@
-<?php require __DIR__.'/views/header.php';
-/* Get array from database to render out card */
-    $stmt = $pdo->prepare('SELECT * FROM posts'); 
-    $stmt->execute();
-    
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+'use strict';
+/* fetch('app/posts/posts.php')
+  .then(response => response.json())
+  .then(posts => {
+    actors.forEach(actor => {
+      const anchor = document.createElement('a');
+      anchor.href = actor.tmdb_url;
+      anchor.textContent = actor.name;
+      document.body.appendChild(anchor);
+    });
+  }); */
 
-    $posts = json_encode($result);
-?> 
+  document.getElementById("home_btn").addEventListener("click", function(){
+    window.location.pathname = 'photoify/home.php'
+  });
+  document.getElementById("upload_btn").addEventListener("click", function(){
+    window.location.pathname = 'photoify/upload.php'
+  });
+  document.getElementById("user_btn").addEventListener("click", function(){
+    window.location.pathname = 'photoify/mypage.php'
+  });
