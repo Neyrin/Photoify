@@ -3,7 +3,7 @@
     width: 100vw;
     height: 55px;
     position: fixed;
-    background-color: grey;
+    background-color: #02818a;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
