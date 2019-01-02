@@ -6,6 +6,7 @@ body {
     background-color: aquamarine;
     font-family: 'Alegreya Sans', sans-serif;
     position: fixed;
+    margin: 0px;
 }
 
 form {
