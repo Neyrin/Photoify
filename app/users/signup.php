@@ -40,6 +40,6 @@ require __DIR__.'/../autoload.php';
             redirect('/');
         }
     }
-
+    die();
 
 ?>
