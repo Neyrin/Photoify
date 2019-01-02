@@ -24,5 +24,5 @@ require __DIR__.'/../autoload.php';
         }
     }
 
-header('location: /photoify/home.php');
+header('location: /photoify/index.php');
 die();
