@@ -1,3 +1,4 @@
+<div class="feed" id="feed"> 
+</div><!--/feed-->
 
-<?php require __DIR__.'/feed.php'; ?>
-
+<script src="assets/script/feed.js"></script>
