@@ -6,7 +6,7 @@ fetch('./app/users/mypage.php')
      data.forEach(user => {
         const avatar = document.createElement('img');
         avatar.classList.add('avatar');
-        avatar.style.backgroundImage=`url(${user.avatar})`;
+        avatar.setAttribute("src", `${user.avatar}`);
         
         const userName = document.createElement('p');
         userName.classList.add('user-name');
