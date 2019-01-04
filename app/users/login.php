@@ -15,7 +15,7 @@ require __DIR__.'/../autoload.php';
 
         if (!$user)
         {
-            header('location: /../start.php');
+            header('location: ../../start.php');
         }
 
         if (password_verify($_POST['password'], $user['password'])) {
