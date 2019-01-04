@@ -1,0 +1,45 @@
+body {
+    background-image: url("images/s-background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.upload-post {
+    /* bottom: 55px; */
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    padding-bottom: 80%;
+    box-sizing: border-box;
+}
+.form-upload {
+    width: 200px;
+    height: 20px;
+    background-color: rgba(255,255,255,0.3);
+    padding: 5px;
+    margin-bottom: 3px;
+}
+.upload-btn {
+    width: 99px;
+    height: 45px;
+    margin-top: 20px;
+    background-color: #016c59;
+    color: #ffffff;
+    border: 1px black solid;
+} 
+/* .select-btn {
+    width: 99px;
+    height: 45px;
+    margin-top: 20px;
+    background-color: #016c59;
+    color: #ffffff;
+    border: 1px black solid;
+} 
+#image {
+    display: none;
+}
+#preview {
+    display: none;
+    width: 100px;
+    height: 100px;
+} */
