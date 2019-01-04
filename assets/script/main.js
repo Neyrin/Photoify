@@ -11,7 +11,7 @@
   }); */
 
   document.getElementById("home_btn").addEventListener("click", function(){
-    window.location.pathname = 'photoify/home.php'
+    window.location.pathname = 'photoify/index.php'
   });
   document.getElementById("upload_btn").addEventListener("click", function(){
     window.location.pathname = 'photoify/upload.php'
