@@ -8,4 +8,5 @@
     <button class="upload-btn" type="submit" name="upload-btn">UPLOAD</button>
 </form>
 
+<script src="assets/script/upload.js"></script>
 <?php require __DIR__.'/views/footer.php'; ?>
