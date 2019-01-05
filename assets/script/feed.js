@@ -2,8 +2,8 @@
 
 fetch('./app/users/feed.php')
 .then(response => response.json())
-.then(posts => { /* console.log(posts)); */  
-    posts.forEach(post => {
+.then(data => { /* console.log(posts)); */  
+    data.forEach(post => {
         const content = document.createElement('img');
         content.classList.add('post-image');
         content.setAttribute("src", `${post.image}`);
