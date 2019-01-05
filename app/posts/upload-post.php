@@ -28,7 +28,7 @@ if(isset($_FILES['image'])) {
                 if (!file_exists(__DIR__.'/../uploads/'.$user_id.'/posts/')) {
                     mkdir(__DIR__.'/../uploads/'.$user_id.'/posts/', 0777, true);
                 }
-                $imageDestination = 'photoify/app/users/uploads/'.$user_id.'/posts/' . $imageNameNew;
+                $imageDestination = './app/users/uploads/'.$user_id.'/posts/' . $imageNameNew;
                 move_uploaded_file($imageTmpName, $imageDestination);
 
                 $statement = $pdo->prepare('INSERT INTO Posts(user_id, caption, image, date)
