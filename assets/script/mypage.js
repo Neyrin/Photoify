@@ -22,9 +22,11 @@ fetch('./app/users/mypage.php')
             userInfo.appendChild(name); 
         });
     });
-        
-        
-        
+
+document.getElementById("settings_btn").addEventListener("click", function(){
+    window.location.pathname = 'photoify/settings.php'
+    });
+    
         
         
         
