@@ -10,7 +10,7 @@ if (!$statement) {
     die(var_dump($pdo->errorInfo()));
 }
 
-$posts = $statement->fetch(PDO::FETCH_ASSOC);
+$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 header('Content-Type: application/json');
 echo json_encode($posts); 
