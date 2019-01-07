@@ -11,11 +11,11 @@
   }); */
 
   document.getElementById("home_btn").addEventListener("click", function(){
-    window.location.pathname = 'photoify/index.php'
+    window.location.pathname = '/index.php'
   });
   document.getElementById("upload_btn").addEventListener("click", function(){
-    window.location.pathname = 'photoify/upload.php'
+    window.location.pathname = '/upload.php'
   });
   document.getElementById("user_btn").addEventListener("click", function(){
-    window.location.pathname = 'photoify/mypage.php'
+    window.location.pathname = '/mypage.php'
   });
