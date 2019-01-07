@@ -1,0 +1,11 @@
+.header {
+    align-self: flex-end;
+    position: fixed;
+    top: 0;
+}
+
+.container {
+    align-self: center;
+    position: fixed;
+    top: 55px;
+}
