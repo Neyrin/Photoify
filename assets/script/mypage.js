@@ -19,13 +19,14 @@ fetch('./app/users/mypage.php')
         const userInfo = document.getElementById("user-info");
             userInfo.appendChild(avatar);
             userInfo.appendChild(userName);
-            userInfo.appendChild(name); 
+            userInfo.appendChild(name);
         });
     });
 
 document.getElementById("settings_btn").addEventListener("click", function(){
     window.location.pathname = 'photoify/settings.php'
     });
+    
     
         
         
