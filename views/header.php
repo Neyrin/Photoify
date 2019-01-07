@@ -14,7 +14,7 @@ require __DIR__.'/../app/autoload.php';
     <link rel="stylesheet" href="assets/style/start.css">
     <link rel="stylesheet" href="assets/style/upload.css">
     <link rel="stylesheet" href="assets/style/feed.css">
-    <!-- <link rel="stylesheet" href="assets/style/mypage.css"> -->
+    <link rel="stylesheet" href="assets/style/mypage.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/solid.css" integrity="sha384-+0VIRx+yz1WBcCTXBkVQYIBVNEFH1eP6Zknm16roZCyeNg2maWEpk/l/KsyFKs7G" crossorigin="anonymous">
   </head>
