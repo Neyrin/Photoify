@@ -6,42 +6,42 @@ require __DIR__.'/../autoload.php';
 
 if(isset($_FILES['image'])) {
     $image = $_FILES['image'];
-    $caption = trim(filter_var($_POST['caption'], FILTER_SANITIZE_STRING)) ?? ' ';
-    $user_id = $_SESSION['user']['user_id'];
     $date = Date('Y-m-d H:i:s');
-
+    $user_id = $_SESSION['user']['user_id'];
+    $caption = trim(filter_var($_POST['caption'], FILTER_SANITIZE_STRING)) ?? ' ';
+    
     $imageName = $_FILES['image']['name'];
-    $imageTmpName = $_FILES['image']['tmp_name'];
     $imageSize = $_FILES['image']['size'];
-    $imageError= $_FILES['image']['error'];
     $imageType = $_FILES['image']['type'];
-
+    $imageError= $_FILES['image']['error'];
+    $imageTmpName = $_FILES['image']['tmp_name'];
+    
     $imageExt = explode('.', $imageName);
     $imageActExt = strtolower(end($imageExt));
     $allowed = array('jpg', 'jpeg', 'png', 'gif');
-
+    
     if (in_array($imageActExt, $allowed)) {
         if ($imageError === 0) {
             if ($imageSize < 4194304) {
                 $imageNameNew = uniqid('', true).".".$imageActExt;
-
-                if (!file_exists(__DIR__.'/../uploads/'.$user_id.'/posts/')) {
-                    mkdir(__DIR__.'/../uploads/'.$user_id.'/posts/', 0777, true);
+                if (!file_exists(__DIR__.'../posts/uploads/'.$user_id.'/posts/')) {
+                    mkdir(__DIR__.'/../posts/uploads/'.$user_id.'/posts/', 0777, true);
                 }
-                $imageDestination = './app/users/uploads/'.$user_id.'/posts/' . $imageNameNew;
+                $imageDestination = 'uploads/'.$user_id.'/posts/'. $imageNameNew;
                 move_uploaded_file($imageTmpName, $imageDestination);
+                $imageLocation = 'app/posts/'.$imageDestination;
 
                 $statement = $pdo->prepare('INSERT INTO Posts(user_id, caption, image, date)
                 VALUES (:user_id, :caption, :image, :date)');
                 $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
                 $statement->bindParam(':caption', $caption, PDO::PARAM_STR);
-                $statement->bindParam(':image', $imageDestination, PDO::PARAM_LOB);
+                $statement->bindParam(':image', $imageLocation, PDO::PARAM_STR);
                 $statement->bindParam(':date', $date, PDO::PARAM_STR);
                 $statement->execute(); 
                 if (!$statement) {
                     die(var_dump($pdo->errorInfo()));
                 }
-                header("Location: ../../index.php");
+                redirect();
             } else {
                 echo "How about we try a smaller image?";
             } 
@@ -49,7 +49,6 @@ if(isset($_FILES['image'])) {
             echo "There seems to be a problem uploading this file...";
         }
     } else {
-        echo "Sorry, this filetype is not allowed. Try another one!";
-    } 
-
-} 
+        echo "Sorry, this filetype is not allowed. Try another one!"; 
+    }
+}  
