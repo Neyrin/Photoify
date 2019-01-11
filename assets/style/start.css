@@ -1,12 +1,11 @@
-body {
-    /* background-image: url("images/s-background.png");
+/* body {
+    background-image: url("images/s-background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;*/
-}
+    background-size: cover;
+}*/
 
 .sign-in {
-    /* bottom: 55px; */
     align-content: center;
     justify-content: center;
     height: 100vh;
