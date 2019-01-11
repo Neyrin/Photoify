@@ -10,12 +10,21 @@
     });
   }); */
 
-  document.getElementById("home_btn").addEventListener("click", function(){
-    window.location.pathname = '/index.php'
-  });
-  document.getElementById("upload_btn").addEventListener("click", function(){
-    window.location.pathname = '/upload.php'
-  });
-  document.getElementById("user_btn").addEventListener("click", function(){
-    window.location.pathname = '/mypage.php'
-  });
+  if(document.getElementById("home_btn")){
+    document.getElementById("home_btn").addEventListener("click", function(){
+      window.location.pathname = '/index.php'
+    });
+  }
+  
+  if(document.getElementById("upload_btn")){
+    document.getElementById("upload_btn").addEventListener("click", function(){
+      window.location.pathname = '/upload.php'
+    });
+  }
+  
+  if(document.getElementById("user_btn")){
+    document.getElementById("user_btn").addEventListener("click", function(){
+      window.location.pathname = '/mypage.php'
+    });
+  }
+  
