@@ -2,15 +2,15 @@
 declare(strict_types=1);
 
 require __DIR__.'/../autoload.php';
+//Retrieve data by newest first
+$stmtPosts = $pdo->query('SELECT * FROM Posts ORDER BY date DESC');
+$stmtPosts->execute();
 
-$statement = $pdo->query('SELECT * FROM Posts');
-$statement->execute();
-
-if (!$statement) {
+if (!$stmtPosts) {
     die(var_dump($pdo->errorInfo()));
 }
 
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+$posts = $stmtPosts->fetchAll(PDO::FETCH_ASSOC);
 
 header('Content-Type: application/json');
 echo json_encode($posts); 
