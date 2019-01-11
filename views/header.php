@@ -16,14 +16,13 @@ require __DIR__.'/../app/autoload.php';
     <link rel="stylesheet" href="assets/style/feed.css">
     <link rel="stylesheet" href="assets/style/mypage.css">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/solid.css" integrity="sha384-+0VIRx+yz1WBcCTXBkVQYIBVNEFH1eP6Zknm16roZCyeNg2maWEpk/l/KsyFKs7G" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 <body>
     <div class="navbar">
       <?php if(isset($_SESSION['user'])): ?>
-      <button class="btn" id="home_btn"><i class="fas fa-home"></i></button>
-      <button class="btn" id="upload_btn"><i class="fas fa-camera-retro"></i></button>
-      <button class="btn" id="user_btn"><i class="fas fa-user-circle"></i></button> 
+      <button class="btn" id="home_btn"><i class="fa fa-home" aria-hidden="true"></i></button>
+      <button class="btn" id="upload_btn"><i class="fa fa-camera-retro"></i></button>
+      <button class="btn" id="user_btn"><i class="fa fa-user-circle-o" aria-hidden="true"></i></button> 
     <?php
     else: ?> 
     <?php endif; ?>
