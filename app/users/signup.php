@@ -10,6 +10,7 @@ require __DIR__.'/../autoload.php';
             $lastName = trim(filter_var($_POST['last_name'], FILTER_SANITIZE_STRING));
             $email = trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
             $userName = trim(filter_var($_POST['user_name'], FILTER_SANITIZE_STRING));
+            //TRIM THE PASOWORD
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
             /* $query = 'INSERT INTO users(first_name, last_name, email, user_name, password)
@@ -38,9 +39,6 @@ require __DIR__.'/../autoload.php';
             // fecth the data from the database, fetch_assoc get a clean output
             $user = $statement->fetch(PDO::FETCH_ASSOC);
             $_SESSION['user'] = $user;
-            header('Location: ../../index.php');
+            redirect();        
         }
-    }
-    die();
-
-?>
+    } die();
