@@ -11,10 +11,15 @@ date_default_timezone_set('UTC');
 // Set to UTF-8.
 mb_internal_encoding('UTF-8');
 
+//Fetch functions
+require __DIR__.'\users\functions.php';
+
 // Fetch global configuration.
 $config = require __DIR__.'/config.php';
 
 // Setup database connection.
 $pdo = new PDO($config['database_path']);
 
-$user_id = $_SESSION['user']['user_id'];
+if(isset($_SESSION['user'])){
+    $user_id = $_SESSION['user']['user_id'];
+}
