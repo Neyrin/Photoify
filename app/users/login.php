@@ -15,7 +15,8 @@ if (isset($_POST['email'], $_POST['password'])) {
     
     if (!$user)
     {
-        redirect('../../start.php');
+        $_SESSION['messages'][] = "We can't find that account. Try again or create an account.";
+        redirect('/');
     }
     
     if (password_verify($_POST['password'], $user['password'])) {

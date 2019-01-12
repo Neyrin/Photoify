@@ -1,4 +1,5 @@
 <?php require __DIR__.'/views/header.php'; ?>
+<?php checkForLoggedInUser(); ?>
 
 <form class="upload-post" action="app/posts/upload-post.php" method="post" enctype="multipart/form-data">
 <!--     <img id="preview" />

@@ -1,3 +1,5 @@
+<?php checkForLoggedInUser(); ?>
+
 <div class="feed" id="feed"> 
 </div><!--/feed-->
 

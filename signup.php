@@ -1,13 +1,4 @@
-<?php require __DIR__.'/views/header.php';
-
-  if(isset($_SESSION['messages'])){
-    foreach($_SESSION['messages'] as $message){
-      echo $message;
-    }
-    unset($_SESSION['messages']);
-  }
-
-?>
+<?php require __DIR__.'/views/header.php';?>
 
 <article>
 

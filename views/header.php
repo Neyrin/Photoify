@@ -18,6 +18,9 @@ require __DIR__.'/../app/autoload.php';
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 <body>
+<?php 
+displayErrorMessage();
+?>
     <div class="navbar">
       <?php if(isset($_SESSION['user'])): ?>
       <button class="btn" id="home_btn"><i class="fa fa-home" aria-hidden="true"></i></button>

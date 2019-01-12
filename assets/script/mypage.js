@@ -5,8 +5,8 @@ fetch('./app/users/mypage.php')
 .then(data => {
     const user = data.users[0];
     const posts = data.userPosts;
-    console.log(user);
-    console.log(posts);
+/*     console.log(user);
+    console.log(posts); */
 
     const avatar = document.createElement('img');
     avatar.classList.add('avatar');

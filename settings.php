@@ -1,8 +1,5 @@
 <?php require __DIR__.'/views/header.php';?>
-
-<?php 
-    // Redirect user if not logged in
-?>
+<?php checkForLoggedInUser(); ?>
 
 <form class="update-avatar" action="app/users/update/upload-avatar.php" method="post" enctype="multipart/form-data">
     <label>UPDATE AVATAR</label><br>
@@ -29,7 +26,7 @@
 
 <a href="app/users/logout.php">SIGN OUT</a>
 
-<button class="delete-account">
+<button class="delete-account-btn" id="delete-account-btn"> DELETE ACCOUNT
 </button><!--/delete-account-->
 
 <?php require __DIR__.'/views/footer.php'; ?>
