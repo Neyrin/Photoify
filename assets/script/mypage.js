@@ -9,9 +9,9 @@ fetch('./app/users/mypage.php')
     console.log(posts); */
 
     const avatar = document.createElement('img');
-    avatar.classList.add('avatar');
-    avatar.setAttribute("src", `${user.avatar}`);
-        
+    avatar.classList.add('my-avatar');
+    setAvatar();
+
     const userName = document.createElement('p');
     userName.classList.add('user-name');
     userName.innerHTML = user.user_name;
@@ -38,6 +38,14 @@ fetch('./app/users/mypage.php')
         userImages.appendChild(image);
         userImages.appendChild(caption);    
     });
+
+    function setAvatar() {
+        if (user.avatar !== null) {
+            avatar.setAttribute("src", `${user.avatar}`);
+        } else {
+            avatar.setAttribute("src", "/app/users/defaultUserImage.png");
+        }
+    };
 });
 
 document.getElementById("settings_btn").addEventListener("click", function(){
