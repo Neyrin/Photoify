@@ -19,15 +19,15 @@ if(isset($_FILES['avatar'])) {
         if ($imageError === 0) {
             if ($imageSize < 4194304) {
                 $imageNameNew = uniqid('', true).".".$imageActExt;
-                if (!file_exists(__DIR__.'../posts/uploads/'.$user_id.'/avatars/')) {
-                    mkdir(__DIR__.'/../posts/uploads/'.$user_id.'/avatars/', 0777, true);
+                if (!file_exists(__DIR__.'/../../posts/uploads/'.$user_id.'/avatars/')) {
+                    mkdir(__DIR__.'/../../posts/uploads/'.$user_id.'/avatars/', 0777, true);
                 }
-                $imageDestination = 'uploads/'.$user_id.'/avatars/'. $imageNameNew;
+                $imageDestination = '../../posts/uploads/'.$user_id.'/avatars/'. $imageNameNew;
                 move_uploaded_file($imageTmpName, $imageDestination);
-                $imageLocation = 'app/posts/'.$imageDestination;
+                $imageLocation = 'app/posts/uploads/'.$user_id.'/avatars/'.$imageNameNew;
 
                 $stmt = $pdo->prepare('INSERT INTO Users(avatar)
-                VALUES (:avatar)');
+                VALUES (:avatar) WHERE ');
                 $stmt->bindParam(':avatar', $imageLocation, PDO::PARAM_STR);
                 $stmt->execute(); 
                 if (!$stmt) {
@@ -43,4 +43,4 @@ if(isset($_FILES['avatar'])) {
     } else {
         echo "Sorry, this filetype is not allowed. Try another one!"; 
     }
-}  
+} 
