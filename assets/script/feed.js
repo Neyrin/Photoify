@@ -4,7 +4,7 @@ fetch('./app/users/feed.php')
 .then(response => response.json())
 .then(data => { /* console.log(data)) */;  
      data.forEach(post => {
-        let id = post.post_id;
+        /* let id = post.post_id; */
 
         const item = document.createElement('div');
         item.classList.add('item');
