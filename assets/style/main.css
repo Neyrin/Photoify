@@ -7,7 +7,6 @@ body {
     flex-direction: column;
     background-color: aquamarine;
     font-family: 'Alegreya Sans', sans-serif;
-    position: fixed;
     margin: 0px;
 }
 
@@ -23,4 +22,8 @@ form {
 
 input {
     border: 1px black solid;
+}
+
+@media screen and (min-width: 700px) {
+    
 }
