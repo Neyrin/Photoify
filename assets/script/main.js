@@ -1,6 +1,6 @@
 'use strict';
 
-  
+  //Button paths
   if(document.getElementById("home_btn")){
     document.getElementById("home_btn").addEventListener("click", function(){
       window.location.pathname = '/index.php'
