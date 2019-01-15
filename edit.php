@@ -22,5 +22,10 @@ redirect('/');
     <button class="edit-post-btn" type="submit" name="edit-post-btn">EDIT</button>
 </form>
 
+<form class="delete-post" action="app/posts/edit/delete-post.php" method="post">
+    <input type="hidden" name="selected-post-id" value=<?= $selected_post_id ?>>
+    <button class="delete-post-btn" type="submit" name="delete-post-btn">DELETE</button>
+</form>
+
 <!-- <script src="assets/script/edit.js"></script> -->
 <?php require __DIR__.'/views/footer.php'; ?>
