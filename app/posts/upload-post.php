@@ -3,7 +3,6 @@
 declare(strict_types=1);
 require __DIR__.'/../autoload.php';
 
-
 if(isset($_FILES['image'])) {
     $image = $_FILES['image'];
     $date = Date('Y-m-d H:i:s');
@@ -31,14 +30,14 @@ if(isset($_FILES['image'])) {
                 move_uploaded_file($imageTmpName, $imageDestination);
                 $imageLocation = 'app/posts/'.$imageDestination;
 
-                $statement = $pdo->prepare('INSERT INTO Posts(user_id, caption, image, date)
+                $stmt = $pdo->prepare('INSERT INTO Posts(user_id, caption, image, date)
                 VALUES (:user_id, :caption, :image, :date)');
-                $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-                $statement->bindParam(':caption', $caption, PDO::PARAM_STR);
-                $statement->bindParam(':image', $imageLocation, PDO::PARAM_STR);
-                $statement->bindParam(':date', $date, PDO::PARAM_STR);
-                $statement->execute(); 
-                if (!$statement) {
+                $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+                $stmt->bindParam(':caption', $caption, PDO::PARAM_STR);
+                $stmt->bindParam(':image', $imageLocation, PDO::PARAM_STR);
+                $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+                $stmt->execute(); 
+                if (!$stmt) {
                     die(var_dump($pdo->errorInfo()));
                 }
                 redirect();
