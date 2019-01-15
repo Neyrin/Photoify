@@ -9,7 +9,7 @@ if(!isset($_POST['confirm-changes'])){
 }
 //Check if email is left empty, if so trigger error
 if(!isset($_POST['email'])){
-    $_SESSION['email'][] = "There has to be an email connected to the account.";
+    $_SESSION['messages'][] = "There has to be an email connected to the account.";
     redirect('/');
 }
 
