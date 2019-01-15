@@ -11,7 +11,7 @@ $stmtInfo = $pdo->query('SELECT
                         avatar, 
                         email, 
                         bio 
-                    FROM Users 
+                    FROM Users
                     WHERE user_id = :user_id');
 $stmtInfo->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmtInfo->execute();
@@ -22,9 +22,10 @@ if (!$stmtInfo) {
 
 $users = $stmtInfo->fetchAll(PDO::FETCH_ASSOC);
 
-
-//Split into separate files and call in functions?
-$stmtPosts = $pdo->query('SELECT * FROM Posts WHERE user_id = :user_id');
+$stmtPosts = $pdo->query('SELECT * 
+                            FROM Posts 
+                            WHERE user_id = :user_id    
+                            ORDER BY date DESC');
 $stmtPosts->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmtPosts->execute();
 

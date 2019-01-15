@@ -3,9 +3,76 @@
     position: fixed;
     top: 0;
 }
-
 .container {
+    width: 100%;
+    padding-bottom: 55px;
+    padding-top: 55px;
+    box-sizing: border-box;
+    height: 100%;
+}
+.user-info {
+    display: flex;
+    padding: 0px 5px;
+    flex-direction: column;
+}
+.my-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.user-images {
     align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+.post {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.like-btn {
+    background-color: rgba(0, 0, 0, 0);
+    /* color: white; */
+    border: none;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+}
+.edit-btn {
+    background-color: rgba(0, 0, 0, 0);
+    /* color: white; */
+    border: none;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+}
+.caption {
+    padding: 0px 5px;
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+    width: 70%;
+    padding-top: 110px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    }
+    .user-info {
+    display: flex;
+    padding: 0px 20px;
+    flex-direction: column;
     position: fixed;
-    top: 55px;
+    }
+    .user-images {
+    margin-bottom: 20px;
+    max-width: 600px;
+    min-width: 350px;
+    padding: 0px 20px;
+    }
 }
