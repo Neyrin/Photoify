@@ -6,24 +6,24 @@ fetch('./app/users/feed2.php')
      data.forEach(post => { 
         const item = document.createElement('div');
         item.classList.add('item');
-        
+
         const user = document.createElement('div');
         user.classList.add('user');
-        
+
         const avatarContainer = document.createElement('div');
         avatarContainer.classList.add('avatar-container');
-        
+
         const avatar = document.createElement('img');
         avatar.classList.add('avatar');
         setAvatar();
-        
+
         const userName = document.createElement('p');
         userName.classList.add('user-name');
         userName.innerHTML = post.user_name;
-        
+
         const imgContainer = document.createElement('div');
         imgContainer.classList.add('img-container');
-        
+
         const content = document.createElement('img');
         content.classList.add('post-image');
         content.setAttribute("id", "post-image");
@@ -37,26 +37,17 @@ fetch('./app/users/feed2.php')
         likeBtn.classList.add('like-btn');
         likeBtn.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i>';
         /* likeBtn.addEventListener("click", ifLiked); */
-        
-        const saveBtn = document.createElement('button');
-        saveBtn.classList.add('hidden');
-        saveBtn.classList.add('save-btn');
-/*         saveBtn.addEventListener("click", function(){
 
-        }); */
-        
         const likes = document.createElement('p');
         likes.innerHTML = post.like;
-        
+
         const editBtn = document.createElement('button');
         editBtn.setAttribute("name", "edit-btn");
         editBtn.classList.add('edit-btn');
         editBtn.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
-/*         item.dataset.postId = post.post_id;
-        item.dataset.userId = post.user_id; */
         editBtn.addEventListener("click", function(){
-            caption.setAttribute("contenteditable", true);
-            saveBtn.classList.remove('hidden')
+
+                window.location.pathname = '/edit.php';
             });
         
         const caption = document.createElement('p');
