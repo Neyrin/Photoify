@@ -4,9 +4,11 @@ fetch('./app/users/feed2.php')
 .then(response => response.json())
 .then(data => { /* console.log(data)) */  
      data.forEach(post => { 
+         //Main item div containing the whole post
         const item = document.createElement('div');
         item.classList.add('item');
 
+        //User info
         const user = document.createElement('div');
         user.classList.add('user');
 
@@ -21,6 +23,7 @@ fetch('./app/users/feed2.php')
         userName.classList.add('user-name');
         userName.innerHTML = post.user_name;
 
+        //Image container with posted image
         const imgContainer = document.createElement('div');
         imgContainer.classList.add('img-container');
 
@@ -29,31 +32,65 @@ fetch('./app/users/feed2.php')
         content.setAttribute("id", "post-image");
         content.setAttribute("src", `${post.image}`);
         
+        //Action bar containing edit/like buttons
         const actionsBar = document.createElement('div');
         actionsBar.classList.add('actions-bar');
         
+        //Form to like post, in the shape of a button
+        const likeForm = document.createElement('form');
+        likeForm.classList.add('like-form')
+        likeForm.setAttribute("action", "app/posts/like.php");
+        likeForm.setAttribute("method", "post");
+
+        const likeInput = document.createElement('input');
+        likeInput.setAttribute("type", "hidden");
+        likeInput.setAttribute("name", "post-id");
+        likeInput.setAttribute("value", post.post_id);
+
+        const likerInfo = document.createElement('input');
+        likerInfo.setAttribute("type", "hidden");
+        likerInfo.setAttribute("name", "liker-id");
+        likerInfo.setAttribute("value", "<?php $user_id ?>");
+
         const likeBtn = document.createElement('button');
         likeBtn.setAttribute("id", "like-btn");
         likeBtn.classList.add('like-btn');
         likeBtn.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i>';
-        /* likeBtn.addEventListener("click", ifLiked); */
+        likeBtn.addEventListener("click", function(){
+            likeBtn.classList.add('liked');
+        });
 
+        //Display number of likes
         const likes = document.createElement('p');
         likes.innerHTML = post.like;
+
+        //Form to edit post, in the shape of a button
+        const editForm = document.createElement('form')
+        editForm.classList.add('edit-form');
+        editForm.setAttribute("action", "edit.php");
+        editForm.setAttribute("method", "post");
+
+        const editInput = document.createElement('input');
+        editInput.setAttribute("type", "hidden");
+        editInput.setAttribute("name", "post-id");
+        editInput.setAttribute("value", post.post_id);
+
+        const userInfo = document.createElement('input');
+        userInfo.setAttribute("type", "hidden");
+        userInfo.setAttribute("name", "post-user-id");
+        userInfo.setAttribute("value", post.user_id);
 
         const editBtn = document.createElement('button');
         editBtn.setAttribute("name", "edit-btn");
         editBtn.classList.add('edit-btn');
         editBtn.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
-        editBtn.addEventListener("click", function(){
-
-                window.location.pathname = '/edit.php';
-            });
         
+        //Caption to post
         const caption = document.createElement('p');
         caption.classList.add('post-caption');
         caption.innerHTML = post.caption;
         
+        //Get feed div from html and then append all objects created in JS
         const feed = document.getElementById('feed');
         feed.appendChild(item);
 
@@ -63,9 +100,15 @@ fetch('./app/users/feed2.php')
         user.appendChild(userName);
         item.appendChild(imgContainer);
         imgContainer.appendChild(content);
-        item.appendChild(actionsBar)
-        actionsBar.appendChild(likeBtn);
-        actionsBar.appendChild(editBtn);
+        item.appendChild(actionsBar);
+        actionsBar.appendChild(likeForm);
+        likeForm.appendChild(likeInput);
+        likeForm.appendChild(likerInfo);
+        likeForm.appendChild(likeBtn);
+        actionsBar.appendChild(editForm);
+        editForm.appendChild(editInput);
+        editForm.appendChild(userInfo);
+        editForm.appendChild(editBtn);
         item.appendChild(caption); 
 
         function setAvatar() {
@@ -77,6 +120,9 @@ fetch('./app/users/feed2.php')
         };
     })
 }); 
+
+
+
 
 /*     function ifLiked() => {
         if (this === firstClick); {
