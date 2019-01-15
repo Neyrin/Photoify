@@ -32,8 +32,7 @@ if(isset($_POST['bio'])){
 }
 
 if(isset($_POST['password'], $_POST['confirm-password'])){
-    //TRIM PASSWORD AFTER REGISTARATION IS DONE
-    $password = $_POST['password'];
+    $password = trim(password_hash($_POST['password'], PASSWORD_DEFAULT));
     $confirm_password = $_POST['confirm-password'];
 }
 
