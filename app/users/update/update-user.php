@@ -2,12 +2,12 @@
 declare(strict_types=1);
 require __DIR__.'../../../autoload.php';
 
-//Check if confirmation password is set, if not trigger error
+//Check if confirmation password is set, if not trigger error and redirect
 if(!isset($_POST['confirm-changes'])){
     $_SESSION['messages'][] = "We need your current password to confirm the changes.";
     redirect('/');
 }
-//Check if email is left empty, if so trigger error
+//Check if email is left empty, if so trigger error and redirect
 if(!isset($_POST['email'])){
     $_SESSION['messages'][] = "There has to be an email connected to the account.";
     redirect('/');
@@ -25,16 +25,16 @@ $password_hash = $password_hash[0]['password'];
 // User input from form
 $password_confirm_changes = $_POST['confirm-changes'];
 
-$email = trim(filter_var($_POST['email'],FILTER_SANITIZE_STRING));
+$email = trim(filter_var($_POST['email'],FILTER_SANITIZE_EMAIL));
+
+if(isset($_POST['bio'])){
+    $bio = trim(filter_var($_POST['bio'],FILTER_SANITIZE_STRING));
+}
 
 if(isset($_POST['password'], $_POST['confirm-password'])){
     //TRIM PASSWORD AFTER REGISTARATION IS DONE
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm-password'];
-}
-
-if(isset($_POST['bio'])){
-    $bio = trim(filter_var($_POST['bio'],FILTER_SANITIZE_STRING));
 }
 
 // See if confirmation password is valid
@@ -62,10 +62,11 @@ redirect();
 
 // Update user info
 if(isset($bio, $email)) {
-    $stmtNewBio = $pdo->prepare('UPDATE Users SET bio = :bio WHERE user_id = :user_id');
-    $stmtNewBio->bindParam(':bio', $bio, PDO::PARAM_STR);
-    $stmtNewBio->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmtNewInfo = $pdo->prepare('UPDATE Users SET bio = :bio, email = :email WHERE user_id = :user_id');
+    $stmtNewInfo->bindParam(':bio', $bio, PDO::PARAM_STR);
+    $stmtNewInfo->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmtNewInfo->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 
-    $stmtNewBio->execute();
+    $stmtNewInfo->execute();
 };
 redirect();
