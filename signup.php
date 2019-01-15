@@ -17,10 +17,6 @@
         <label>Email</label><br>
         <input class="form-signup" type="email" name="email" required>
       </p>
-<!--       <p>
-        <label>Birthday</label><br>
-        <input class="form-signup" type="date" name="birthday" required>
-      </p> -->
       <p>
         <label>Username</label><br>
         <input type="text" name="user_name">
