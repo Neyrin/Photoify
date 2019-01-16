@@ -19,6 +19,12 @@
     });
   }
 
+  if(document.getElementById("sign-out-btn")){
+    document.getElementById("sign-out-btn").addEventListener("click", function(){
+      window.location.pathname = '/../app/users/logout.php'
+    });
+  }
+
   if(document.getElementById("delete-account-btn")){
     document.getElementById("delete-account-btn").addEventListener("click", function(){
       window.location.pathname = '/delete-account.php'
