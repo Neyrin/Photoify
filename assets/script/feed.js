@@ -50,19 +50,30 @@ fetch('./app/users/feed.php')
         const likerInfo = document.createElement('input');
         likerInfo.setAttribute("type", "hidden");
         likerInfo.setAttribute("name", "liker-id");
-        likerInfo.setAttribute("value", "<?php $user_id ?>");
+        likerInfo.setAttribute("value", "<?= $user_id ?>");
 
         const likeBtn = document.createElement('button');
         likeBtn.setAttribute("id", "like-btn");
         likeBtn.classList.add('like-btn');
         likeBtn.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i>';
-        likeBtn.addEventListener("click", function(){
-            likeBtn.classList.add('liked');
-        });
+/*         likeBtn.addEventListener("click", function(){
+            let liked = false; 
+            if(!liked) {
+                likeForm.removeAttribute("action", "app/posts/like.php");
+                likeForm.addAttribute("action", "app/posts/dislike.php");
+                liked = true;
+                return;
+            } else {
+                likeForm.removeAttribute("action", "app/posts/dislike.php");
+                likeForm.addAttribute("action", "app/posts/like.php");
+                liked = false;
+                return;
+            }
+        }); */
 
         //Display number of likes
-        const likes = document.createElement('p');
-        likes.innerHTML = post.like;
+        const likeCounter = document.createElement('p');
+        likeCounter.innerHTML = post.likes;
 
         //Form to edit post, in the shape of a button
         const editForm = document.createElement('form')
@@ -94,23 +105,38 @@ fetch('./app/users/feed.php')
         const feed = document.getElementById('feed');
         feed.appendChild(item);
 
+        //Append user data to item div
         item.appendChild(user);
         user.appendChild(avatarContainer)
         avatarContainer.appendChild(avatar);
         user.appendChild(userName);
+
+        //Append post image to item div
         item.appendChild(imgContainer);
         imgContainer.appendChild(content);
+
+        //Append button-container to item div
         item.appendChild(actionsBar);
+
+        //Append like-button to button-container
         actionsBar.appendChild(likeForm);
         likeForm.appendChild(likeInput);
         likeForm.appendChild(likerInfo);
         likeForm.appendChild(likeBtn);
+
+        //Append like counter to actions-bar
+        actionsBar.appendChild(likeCounter);
+
+        //Append edit-button to button-container
         actionsBar.appendChild(editForm);
         editForm.appendChild(editInput);
         editForm.appendChild(userInfo);
         editForm.appendChild(editBtn);
+
+        //Append caption to item div
         item.appendChild(caption); 
 
+        //Function to set default avatar if user hasn't set onr
         function setAvatar() {
             if (post.avatar !== null) {
                 avatar.setAttribute("src", `${post.avatar}`);
@@ -118,24 +144,8 @@ fetch('./app/users/feed.php')
                 avatar.setAttribute("src", "/app/users/defaultUserImage.png");
             }
         };
+
+
+          
     })
 }); 
-
-
-
-
-/*     function ifLiked() => {
-        if (this === firstClick); {
-            this.classList.add('liked-by-user');
-            window.location.pathname = '/like.php';
-        } elseif (this === secondClick); {
-            this.classList.remove('liked-by-user');
-            window.location.pathname = '/dislike.php';
-        };
-    } 
-      document.getElementById('button').addEventListener('click', function () {
-      this.active = !this.active;
-      var step = (this.active ? 3 : 0);
-      this.innerHTML = step;
-  }, true);
-    */
