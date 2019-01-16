@@ -52,14 +52,23 @@ fetch('./app/users/feed.php')
         likerInfo.setAttribute("name", "liker-id");
         likerInfo.setAttribute("value", "<?= $user_id ?>");
 
+        var isLiked = false;
         const likeBtn = document.createElement('button');
         likeBtn.setAttribute("id", "like-btn");
         likeBtn.classList.add('like-btn');
         likeBtn.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i>';
-
+        likeBtn.addEventListener("click", function(){
+            if(isLiked){
+                likeBtn.classList.remove("liked");
+            isLiked = false;
+            } else{
+            likeBtn.classList.add("liked");
+            isLiked = true;
+            } 
+        });
         //Display number of likes
         const likeCounter = document.createElement('p');
-        likeCounter.innerHTML = post.likes;
+        likeCounter.innerHTML = "Likes:"+ post.likes;
 
         //Form to edit post, in the shape of a button
         const editForm = document.createElement('form')
