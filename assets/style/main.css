@@ -9,6 +9,9 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
     margin: 0px;
 }
+article {
+    margin-top: 0px;
+}
 h1 {
     font-size: 3em;
 }
@@ -58,6 +61,9 @@ header {
 
 
 @media screen and (min-width: 700px) {
+    article {
+        margin-top: 55px;
+    }
     header {
         display: none;
     }
