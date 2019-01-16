@@ -50,19 +50,16 @@
 }
 .like-btn {
     background-color: rgba(0, 0, 0, 0);
-    color: white;
+    color: #a4b6b8;
     border: none;
     padding: 0;
     width: 45px;
     height: 45px;
     font-size: 20px;
 }
-.liked {
-    color: #cc1e1e;
-}
 .edit-btn {
     background-color: rgba(0, 0, 0, 0);
-    color: white;
+    color: #a4b6b8;
     border: none;
     padding: 0;
     width: 45px;
