@@ -39,7 +39,7 @@ fetch('./app/users/feed.php')
         //Form to like post, in the shape of a button
         const likeForm = document.createElement('form');
         likeForm.classList.add('like-form')
-        likeForm.setAttribute("action", "app/posts/like.php");
+        likeForm.setAttribute("action", "app/posts/likes.php");
         likeForm.setAttribute("method", "post");
 
         const likeInput = document.createElement('input');
@@ -56,20 +56,6 @@ fetch('./app/users/feed.php')
         likeBtn.setAttribute("id", "like-btn");
         likeBtn.classList.add('like-btn');
         likeBtn.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i>';
-/*         likeBtn.addEventListener("click", function(){
-            let liked = false; 
-            if(!liked) {
-                likeForm.removeAttribute("action", "app/posts/like.php");
-                likeForm.addAttribute("action", "app/posts/dislike.php");
-                liked = true;
-                return;
-            } else {
-                likeForm.removeAttribute("action", "app/posts/dislike.php");
-                likeForm.addAttribute("action", "app/posts/like.php");
-                liked = false;
-                return;
-            }
-        }); */
 
         //Display number of likes
         const likeCounter = document.createElement('p');
