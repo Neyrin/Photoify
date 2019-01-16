@@ -1,6 +1,6 @@
 <?php require __DIR__.'/views/header.php';?>
 <?php checkForLoggedInUser(); ?>
-
+<div class="settings-container">
 <form class="update-avatar" action="app/users/update/upload-avatar.php" method="post" enctype="multipart/form-data">
     <label>UPDATE AVATAR</label><br>
     <input class="form-update" type="file" name="avatar" id="avatar">
@@ -24,9 +24,9 @@
     <button class="update-btn" type="submit">UPDATE</button>
 </form>
 
-<a href="app/users/logout.php">SIGN OUT</a>
+<button class="sign-out-btn" id="sign-out-btn">SIGN OUT</button>
 
 <button class="delete-account-btn" id="delete-account-btn"> DELETE ACCOUNT
 </button><!--/delete-account-->
-
+</div><!--/settings-container-->
 <?php require __DIR__.'/views/footer.php'; ?>
