@@ -1,6 +1,17 @@
 .settings-container {
-    margin-top: 110px;
+    margin-top: 55px;
 }
 .update-avatar {
     margin-bottom: 30px;
+}
+.delete-account-btn {
+    background-color: #ad202c;
+}
+.sign-out-btn {
+    margin-left: 20px;
+}
+@media screen and (min-width: 700px) {
+    .settings-container {
+        margin-top: 110px;
+    }
 }
