@@ -9,11 +9,16 @@
     padding-top: 55px;
     box-sizing: border-box;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .user-info {
     display: flex;
     padding: 0px 5px;
     flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .my-avatar {
     width: 70px;
@@ -35,7 +40,6 @@
 }
 .like-btn {
     background-color: rgba(0, 0, 0, 0);
-    /* color: white; */
     border: none;
     padding: 0;
     width: 45px;
@@ -44,7 +48,6 @@
 }
 .edit-btn {
     background-color: rgba(0, 0, 0, 0);
-    /* color: white; */
     border: none;
     padding: 0;
     width: 45px;
@@ -54,19 +57,22 @@
 .caption {
     padding: 0px 5px;
 }
+#settings_btn {
+    margin-right: 15px;
+}
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1150px) {
     .container {
     width: 70%;
     padding-top: 110px;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+/*     flex-direction: row-reverse;
+    justify-content: space-between; */
     }
     .user-info {
-    display: flex;
+/*     display: flex;
     padding: 0px 20px;
-    flex-direction: column;
+    flex-direction: column; */
     position: fixed;
     }
     .user-images {

@@ -1,10 +1,18 @@
+.article{
+    padding-top: 55px;
+    justify-self: center;
+    width: 100%;
+    display: flex;
+}
 .feed {
-    align-self: center;
+/*     align-self: center;
     align-content: center;
-    justify-content: center;
-    width: 100vw;
-    padding-bottom: 55px;
+    justify-content: center; */
+    width: 100%;
+    padding: 55px 0px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 .item {
     align-self: center;
@@ -23,6 +31,9 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+}
+.user-name {
+    margin-left: 15px;
 }
 .img-container {
     max-width: 600px;
@@ -46,6 +57,9 @@
     height: 45px;
     font-size: 20px;
 }
+.liked {
+    color: #cc1e1e;
+}
 .edit-btn {
     background-color: rgba(0, 0, 0, 0);
     color: white;
@@ -62,6 +76,6 @@
 @media screen and (min-width: 700px) {
     .feed {
         padding-bottom: 0;
-        padding-top: 55px;
+        padding-top: 110px;
     }
 }
