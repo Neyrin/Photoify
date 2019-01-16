@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/Neyrin/Photoify/master/assets/style/images/Photoify-logo-clr.png">
+
 # Photoify
 
 Photoify is a schoolproject for the Webdeveloper class of 2018 @ Yrgo. The aim is to build a functional, image based social-media platform.
@@ -25,7 +27,8 @@ Tested by:
 - HTML/CSS
 - SQLite
 
-## Image cred
+### Image cred
 Images by
 - Rebecca Jörnryd
 - John Areschoug
+- Isa Areschoug
