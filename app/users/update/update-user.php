@@ -32,7 +32,7 @@ if(isset($_POST['bio'])){
 }
 
 if(isset($_POST['password'], $_POST['confirm-password'])){
-    $password = trim(password_hash($_POST['password'], PASSWORD_DEFAULT));
+    $password = $_POST['password'];
     $confirm_password = $_POST['confirm-password'];
 }
 
@@ -44,11 +44,11 @@ if(!password_verify($password_confirm_changes, $password_hash)){
 
 // Update user password
 if(isset($password)) {
-    if($password !== $confirm_password) {
+    if($password !== $confirm_password){
         $_SESSION['messages'][] = "The passwords doesn't match.";
         redirect('/');
     } else{
-        $newPassword = password_hash($password, PASSWORD_DEFAULT);
+        $newPassword = trim(password_hash($_POST['password'], PASSWORD_DEFAULT));
 
         $stmtNewPass = $pdo->prepare('UPDATE Users SET password = :password WHERE user_id = :user_id');
         $stmtNewPass->bindParam(':password', $newPassword, PDO::PARAM_STR);
