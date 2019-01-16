@@ -7,7 +7,6 @@ if(isset($_POST['post-user-id'], $_POST['post-id'])) {
     redirect('/');
     } else {
         $selected_post_id = filter_var($_POST['post-id'], FILTER_SANITIZE_NUMBER_INT);
-        print_r($selected_post_id);
     }
 } else {$_SESSION['messages'][] = "There is no post to edit.";
 redirect('/');
