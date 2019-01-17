@@ -20,10 +20,16 @@ fetch('./app/users/mypage.php')
     name.classList.add('name');
     name.innerHTML = user.first_name + ' ' + user.last_name;
     
+    const bio = document.createElement('p');
+    bio.classList.add('bio');
+    bio.innerHTML = user.bio;
+    
     const userInfo = document.getElementById("user-info");
     userInfo.appendChild(avatar);
     userInfo.appendChild(userName);
     userInfo.appendChild(name);
+    userInfo.appendChild(bio);
+
 
     posts.forEach(post => {
         const image = document.createElement('img');
