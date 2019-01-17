@@ -19,14 +19,14 @@ require __DIR__.'/../app/autoload.php';
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 <body>
-<div class="errorMsg">
-<?php 
-displayErrorMessage();
-?>
-</div><!--/errorMsg-->
+
+
 <header>
 	<img class="logo" src="assets/style/images/Photoify-logo-white.png">  
 </header>
+
+<div class="errorMsg"> <?php displayErrorMessage(); ?> </div>
+
 
     <div class="navbar">
 		<div class="logo-container">
