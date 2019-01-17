@@ -33,12 +33,9 @@ if($liker_id !== 0 ){
         $stmtLike = $pdo->prepare('INSERT INTO Actions(user_id, post_id) VALUES(:user_id, :post_id)');
         $stmtLike->bindParam(':user_id', $liker_id, PDO::PARAM_INT);
         $stmtLike->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-        
-        if (!$stmtLike) {
-            die(var_dump($pdo->errorInfo()));
-        }
 
         $stmtLike->execute();
     }
 }
-redirect();
+
+redirect("/");
