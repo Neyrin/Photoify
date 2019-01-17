@@ -7,11 +7,11 @@
 
       <p>
         <label>First name</label><br>
-        <input class="form-signup" type="text" name="first_name">
+        <input class="form-signup" type="text" name="first_name" required>
       </p>
       <p>
         <label>Last name</label><br>
-        <input class="form-signup" type="text" name="last_name">
+        <input class="form-signup" type="text" name="last_name" required>
       </p>
       <p>
         <label>Email</label><br>
@@ -19,18 +19,18 @@
       </p>
       <p>
         <label>Username</label><br>
-        <input type="text" name="user_name">
+        <input type="text" name="user_name" required>
       </p>
       <p>
         <label>Password</label><br>
-        <input type="password" name="password">
+        <input type="password" name="password" required>
       </p>
       <p>
         <label>Confirm password</label><br>
-        <input type="password" name="confirm_password">
+        <input type="password" name="confirm_password" required>
       </p>
       <p>
-        <button class="sign-up">Sign up</button>
+        <button class="sign-up-btn">SIGN UP</button>
      </p>
      <p>
         <a href="index.php">I'm already a member!</a>
