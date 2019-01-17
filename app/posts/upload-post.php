@@ -47,10 +47,9 @@ if(isset($_FILES['image'])) {
                 $stmt->bindParam(':caption', $caption, PDO::PARAM_STR);
                 $stmt->bindParam(':image', $imageLocation, PDO::PARAM_STR);
                 $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+                
                 $stmt->execute(); 
-                if (!$stmt) {
-                    die(var_dump($pdo->errorInfo()));
-                }
+
                 redirect();
             } else {
                 $_SESSION['messages'][] = "How about we try a smaller image?";

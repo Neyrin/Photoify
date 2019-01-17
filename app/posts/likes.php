@@ -22,10 +22,6 @@ if($liker_id !== 0 ){
         $stmtDislike = $pdo->prepare('DELETE FROM Actions WHERE user_id = :user_id AND post_id = :post_id');
         $stmtDislike->bindParam(':user_id', $liker_id, PDO::PARAM_INT);
         $stmtDislike->bindParam(':post_id', $post_id, PDO::PARAM_INT);
-        
-        if (!$stmtDislike) {
-            die(var_dump($pdo->errorInfo()));
-        }
 
         $stmtDislike->execute();
     //If there is no matching db entry, add like
@@ -37,5 +33,4 @@ if($liker_id !== 0 ){
         $stmtLike->execute();
     }
 }
-
-redirect("/");
+redirect('/');

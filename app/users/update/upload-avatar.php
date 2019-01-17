@@ -42,10 +42,8 @@ if(isset($_FILES['avatar'])) {
                 SET avatar = :avatar WHERE user_id = :user_id');
                 $stmt->bindParam(':avatar', $imageLocation, PDO::PARAM_STR);
                 $stmt->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+                
                 $stmt->execute(); 
-                if (!$stmt) {
-                    die(var_dump($pdo->errorInfo()));
-                }
                 redirect();
             } else {
                 $_SESSION['messages'][] = "How about we try a smaller image?";

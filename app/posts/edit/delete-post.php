@@ -10,9 +10,7 @@ if(isset($_POST['selected-post-id'])) {
 
     $stmtDelete = $pdo->prepare('DELETE FROM Posts WHERE post_id = :post_id');
     $stmtDelete->bindParam(':post_id', $selectedPostId, PDO::PARAM_INT);
-    if (!$stmtDelete) {
-        die(var_dump($pdo->errorInfo()));
-    }
+ 
     $stmtDelete->execute();
 } 
 redirect(); 

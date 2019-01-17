@@ -16,11 +16,6 @@ require __DIR__.'/../autoload.php';
             $stmtCreate = $pdo->prepare('INSERT INTO users(first_name, last_name, email, user_name, password)
             VALUES (:first_name, :last_name, :email, :user_name, :password)');
 
-            if (!$stmtCreate)
-            {
-                die(var_dump($pdo->errorInfo()));
-            }
-
             $stmtCreate->bindParam(':first_name', $firstName, PDO::PARAM_STR);
             $stmtCreate->bindParam(':last_name', $lastName, PDO::PARAM_STR);
             $stmtCreate->bindParam(':email', $email, PDO::PARAM_STR);

@@ -16,10 +16,6 @@ $stmtInfo = $pdo->query('SELECT
 $stmtInfo->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmtInfo->execute();
 
-if (!$stmtInfo) {
-    die(var_dump($pdo->errorInfo()));
-}
-
 $users = $stmtInfo->fetchAll(PDO::FETCH_ASSOC);
 
 $stmtPosts = $pdo->query('SELECT * 
@@ -28,10 +24,6 @@ $stmtPosts = $pdo->query('SELECT *
                             ORDER BY date DESC');
 $stmtPosts->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmtPosts->execute();
-
-if (!$stmtPosts) {
-    die(var_dump($pdo->errorInfo()));
-}
 
 $userPosts = $stmtPosts->fetchAll(PDO::FETCH_ASSOC);
 

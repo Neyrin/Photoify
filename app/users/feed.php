@@ -18,9 +18,7 @@ $stmtPosts = $pdo->prepare(
     LEFT JOIN Actions a ON p.post_id=a.post_id
     GROUP BY p.post_id
     ORDER BY p.date DESC;');
-    if (!$stmtPosts) {
-        die(var_dump($pdo->errorInfo()));
-    }
+
     $stmtPosts->execute();
     $posts = $stmtPosts->fetchAll(PDO::FETCH_ASSOC);
 

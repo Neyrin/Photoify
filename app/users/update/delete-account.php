@@ -26,17 +26,11 @@ if(!password_verify($password_confirm_delete, $password_hash)){
 }
 //Delete posts by user
 $stmtDeletePosts = $pdo->prepare('DELETE FROM Posts WHERE user_id = :user_id');
-if (!$stmtDeletePosts){
-    die(var_dump($pdo->errorInfo()));
-}
 $stmtDeletePosts->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmtDeletePosts->execute();
 
 //Delete user
 $stmtDeleteUser = $pdo->prepare('DELETE FROM Users WHERE user_id = :user_id');
-if (!$stmtDeleteUser){
-    die(var_dump($pdo->errorInfo()));
-}
 $stmtDeleteUser->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 $stmtDeleteUser->execute();
 
