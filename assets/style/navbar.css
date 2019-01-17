@@ -18,6 +18,10 @@
     color: black;
     margin-top: 0;
 }
+.btn:hover {
+    color: #255a53;
+    background-color: rgba(0, 0, 0, 0);
+}
 
 @media screen and (min-width: 700px) {
     .navbar {

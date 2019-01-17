@@ -57,6 +57,10 @@
     height: 45px;
     font-size: 20px;
 }
+.like-btn:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #255a53;
+}
 .edit-btn {
     background-color: rgba(0, 0, 0, 0);
     color: #a4b6b8;
@@ -66,6 +70,10 @@
     height: 45px;
     font-size: 20px;
 }
+.edit-btn:hover {
+    background-color: rgba(0, 0, 0, 0);
+    color: #255a53;
+}
 .post-caption {
     padding: 0px 5px;
 }
@@ -73,6 +81,6 @@
 @media screen and (min-width: 700px) {
     .feed {
         padding-bottom: 0;
-        padding-top: 110px;
+        padding-top: 55px;
     }
 }

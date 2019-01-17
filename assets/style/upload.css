@@ -1,9 +1,3 @@
-body {
-    /*background-image: url("images/s-background.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;*/
-}
 .upload-post {
     align-content: center;
     justify-content: center;
@@ -20,25 +14,4 @@ body {
 }
 .upload-btn {
     width: 99px;
-    height: 45px;
-    margin-top: 20px;
-    background-color: #016c59;
-    color: #ffffff;
-    border: 1px black solid;
 } 
-/* .select-btn {
-    width: 99px;
-    height: 45px;
-    margin-top: 20px;
-    background-color: #016c59;
-    color: #ffffff;
-    border: 1px black solid;
-} 
-#image {
-    display: none;
-}
-#preview {
-    display: none;
-    width: 100px;
-    height: 100px;
-} */
