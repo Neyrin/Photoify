@@ -3,7 +3,7 @@
 fetch('./app/users/feed.php')
 .then(response => response.json())
 .then(data => { /* console.log(data)) */  
-     data.forEach(post => { 
+    data.forEach(post => { 
          //Main item div containing the whole post
         const item = document.createElement('div');
         item.classList.add('item');
@@ -30,7 +30,7 @@ fetch('./app/users/feed.php')
         const content = document.createElement('img');
         content.classList.add('post-image');
         content.setAttribute("id", "post-image");
-        content.setAttribute("src", `${post.image}`);
+        content.setAttribute("src", post.image);
         
         //Action bar containing edit/like buttons
         const actionsBar = document.createElement('div');
@@ -45,29 +45,24 @@ fetch('./app/users/feed.php')
         const likeInput = document.createElement('input');
         likeInput.setAttribute("type", "hidden");
         likeInput.setAttribute("name", "post-id");
+        likeInput.classList.add('.post_id_info');
         likeInput.setAttribute("value", post.post_id);
 
         const likerInfo = document.createElement('input');
         likerInfo.setAttribute("type", "hidden");
         likerInfo.setAttribute("name", "liker-id");
-        likerInfo.setAttribute("value", "<?= $user_id ?>");
+        likerInfo.classList.add('.active_user_info');
+        likerInfo.setAttribute("value", post.logged_in_user);
 
         var isLiked = false;
         const likeBtn = document.createElement('button');
         likeBtn.setAttribute("id", "like-btn");
         likeBtn.classList.add('like-btn');
         likeBtn.innerHTML = '<i class="fa fa-heart" aria-hidden="true"></i>';
-        likeBtn.addEventListener("click", function(){
-            if(isLiked){
-                likeBtn.classList.remove("liked");
-            isLiked = false;
-            } else{
-            likeBtn.classList.add("liked");
-            isLiked = true;
-            } 
-        });
+
         //Display number of likes
         const likeCounter = document.createElement('p');
+        likeCounter.classList.add('like-counter');
         likeCounter.innerHTML = "Likes:"+ post.likes;
 
         //Form to edit post, in the shape of a button
@@ -140,7 +135,14 @@ fetch('./app/users/feed.php')
             }
         };
 
-
-          
-    })
+        likeBtn.addEventListener("click", function(){
+            if(isLiked){
+                likeBtn.classList.remove("liked");
+            isLiked = false;
+            } else{
+            likeBtn.classList.add("liked");
+            isLiked = true;
+            } 
+        });
+    });
 }); 
