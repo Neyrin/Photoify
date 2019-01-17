@@ -7,22 +7,24 @@
     <button class="upload-btn" type="submit" name="upload-btn">UPLOAD</button>
 </form>
 
-<form class="update-bio" action="app/users/update/update-user.php" method="post">
+<form class="update-info" action="app/users/update/update-user.php" method="post">
     <label>UPDATE BIO</label><br>
     <input class="form-update" type="text" name="bio" value="<?= $_SESSION['user']['bio'] ?>">
 
     <label>UPDATE EMAIL</label><br>
     <input class="form-update" type="email" name="email" value="<?= $_SESSION['user']['email'] ?>" required>
+    <button class="update-info-btn" type="submit">UPDATE USER INFO</button>
+</form><!--/update-bio-->
 
+<form class="update-password" action="app/users/update/update-password.php" method="post"> 
     <label>UPDATE PASSWORD</label><br>
-    <input class="form-update" type="password" name="password">
-    <input class="form-update" type="password" name="confirm-password">
+    <input class="form-update" type="password" name="password" placeholder="Enter new passsword" >
+    <input class="form-update" type="password" name="confirm-password" placeholder="Repeat new password">
 
-    <label>TYPE CURRENT PASSWORD</label><br>
-    <input class="form-update" type="password" name="confirm-changes">
+    <input class="form-update" type="password" name="confirm-changes" placeholder="Type current password">
 
-    <button class="update-btn" type="submit">UPDATE</button>
-</form>
+    <button class="update-pass-btn" type="submit">UPDATE PASSWORD</button>
+</form><!--/update-password-->
 
 <button class="sign-out-btn" id="sign-out-btn">SIGN OUT</button>
 
