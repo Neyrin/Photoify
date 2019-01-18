@@ -6,7 +6,7 @@ Photoify is a schoolproject for the Webdeveloper class of 2018 @ Yrgo. The aim i
 
 ### Installing
 
-To install this project you need to have a web server solution stack. Download the project repository onto your computer using this [link](https://github.com/Neyrin/Photoify.git), and set your web servers root directory to the root folder of the repository, which is named Photoify. Then open localhost in your preffered browser.
+To install this project you need to have a web server solution stack. Download the project repository onto your computer using this [link](https://github.com/Neyrin/Photoify.git), and set your web servers root directory to the root folder of the repository, which is named Photoify. Then open localhost in your prefered browser.
 
 ## Tested 
 - [ ] Mac
@@ -18,8 +18,9 @@ To install this project you need to have a web server solution stack. Download t
 - [ ] Safari
 
 Tested by:
-- [ ] Tester 1
-- [ ] Tester 2
+- [x] Ida Hallner
+- [x] Magnus Gustaver
+- [ ] Tester 3
 
 ## Built with
 - PHP
