@@ -12,7 +12,7 @@ date_default_timezone_set('UTC');
 mb_internal_encoding('UTF-8');
 
 //Fetch functions
-require __DIR__.'\users\functions.php';
+require __DIR__.'/users/functions.php';
 
 // Fetch global configuration.
 $config = require __DIR__.'/config.php';
